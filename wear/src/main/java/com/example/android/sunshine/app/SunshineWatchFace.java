@@ -302,7 +302,7 @@ public class SunshineWatchFace extends CanvasWatchFaceService {
 					mYOffset,
 					mTimePaint);
 
-			DateFormat dateFormat = new SimpleDateFormat("EEE, MMM d YYYY");
+			DateFormat dateFormat = new SimpleDateFormat("EEE, MMM d yyyy");
 			String date = dateFormat.format(mCalendar.getTime()).toUpperCase();
 			mDatePaint.getTextBounds(date, 0, date.length(), r);
 			canvas.drawText(date,

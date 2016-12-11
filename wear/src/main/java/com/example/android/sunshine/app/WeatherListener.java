@@ -62,8 +62,8 @@ public class WeatherListener extends WearableListenerService
 						.getDataMap();
 				String path = dataEvent.getDataItem().getUri().getPath();
 				if (path.equals("/weather")) {
-					double maxTemp = dataMap.getDouble("maxTemp");
-					double minTemp = dataMap.getDouble("minTemp");
+					double maxTemp = Double.parseDouble(dataMap.getString("maxTemp"));
+					double minTemp = Double.parseDouble(dataMap.getString("minTemp"));
 					Asset weather = dataMap.getAsset("icon");
 					weatherInterface.onWeatherChanged(
 							maxTemp, minTemp, loadBitmapFromAsset(weather));
